@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache
+Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="baseLayout"
+                template="/WEB-INF/layout/base.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header"
+                       value="/WEB-INF/layout/header.jsp" />
+        <put-attribute name="content" value="" />
+        <put-attribute name="footer"
+                       value="/WEB-INF/layout/footer.jsp" />
+    </definition>
+    <definition name="index" extends="baseLayout">
+        <put-attribute name="title" value="Trang chủ" />
+        <put-attribute name="content"
+                       value="/WEB-INF/jsp/index.jsp" />
+    </definition>
+    
+    <definition name="products" extends="baseLayout">
+        <put-attribute name="title" value="Quan ly san pham" />
+        <put-attribute name="content"
+                       value="/WEB-INF/jsp/products.jsp" />
+    </definition>
+    <definition name="product-detail" extends="baseLayout">
+        <put-attribute name="title" value="Chi tiet san pham" />
+        <put-attribute name="content" value="/WEB-INF/jsp/product-detail.jsp" />
+    </definition>
+    <definition name="cart" extends="baseLayout">
+        <put-attribute name="title" value="Gio hang" />
+        <put-attribute name="content" value="/WEB-INF/jsp/cart.jsp" />
+    </definition>
+    <definition name="stats" extends="baseLayout">
+        <put-attribute name="title" value="Thong ke bao cao" />
+        <put-attribute name="content" value="/WEB-INF/jsp/stats.jsp" />
+    </definition>
+</tiles-definitions>
