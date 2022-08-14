@@ -49,6 +49,11 @@
             </tr>
         </c:forEach>
     </table>
+
+    <div class="alert alert-info">
+        
+        <h5>Tong tien: <span id="amountId">${countCart.amount}</span> VND</h5>
+    </div>
     <input type="button" value="Thanh toan" class="btn btn-info" />
     <br/>
 </c:if>

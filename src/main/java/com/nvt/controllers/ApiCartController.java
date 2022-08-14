@@ -9,6 +9,8 @@ import com.nvt.utils.Utils;
 import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,10 +44,10 @@ public class ApiCartController {
         
         session.setAttribute("cart", cart);
         
-        return Utils.countCart(cart);
+        return Utils.count(cart);
     }
     @PutMapping("/cart")
-    public int updateCart(@RequestBody Cart params, HttpSession session) {
+    public ResponseEntity<Map<String, Long>> updateCart(@RequestBody Cart params, HttpSession session) {
         Map<Integer, Cart> cart = (Map<Integer, Cart>) session.getAttribute("cart");
         
         if(cart == null)
@@ -60,10 +62,10 @@ public class ApiCartController {
         }
         session.setAttribute("cart", cart);
         
-        return Utils.countCart(cart);
+        return new ResponseEntity<>(Utils.countCart(cart), HttpStatus.OK);
     }
     @DeleteMapping("/cart/{productId}")
-    public int deleteCart(
+    public ResponseEntity<Map<String, Long>> deleteCart(
             @PathVariable(value="productId") Integer productId,
             HttpSession session) {
         Map<Integer, Cart> cart = (Map<Integer, Cart>) session.getAttribute("cart");
@@ -75,7 +77,7 @@ public class ApiCartController {
                 session.setAttribute("cart", cart);
             }
         }
-        return Utils.countCart(cart);
+         return new ResponseEntity<>(Utils.countCart(cart), HttpStatus.OK);
     }
 }
 

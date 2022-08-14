@@ -91,7 +91,9 @@ function updateCart(id, obj) {
         return res.json();
     }).then(function (data) {
         let d = document.getElementById("cartCounter");
-        d.innerText = data;
+        d.innerText = data.counter;
+        let a = document.getElementById("amountId")
+        a.innerText = data.amount;
     });
 }
 
@@ -109,7 +111,7 @@ function deleteCart(productId) {
             
         }).then(function (data) {
             let d = document.getElementById("cartCounter");
-            d.innerText = data;
+            d.innerText = data.counter;
             location.reload();
         });
     }

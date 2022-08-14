@@ -5,6 +5,7 @@
 package com.nvt.controllers;
 
 import com.nvt.pojo.Cart;
+import com.nvt.utils.Utils;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -24,7 +25,7 @@ public class CartController {
         
         Map<Integer, Cart> cart = (Map<Integer, Cart>) session.getAttribute("cart");
         model.addAttribute("cart", cart);   
-        
+        model.addAttribute("countCart", Utils.countCart(cart));
         return "cart";
     }
 }   

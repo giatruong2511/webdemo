@@ -40,7 +40,7 @@ public class IndexController {
     @ModelAttribute
     public void CateAttr(Model model, HttpSession session){
         model.addAttribute("categories",  this.categoryService.getCategories());
-        model.addAttribute("cartCounter", Utils.countCart((Map<Integer, Cart>) session.getAttribute("cart")));
+        model.addAttribute("count", Utils.count((Map<Integer, Cart>) session.getAttribute("cart")));
         
     }
     

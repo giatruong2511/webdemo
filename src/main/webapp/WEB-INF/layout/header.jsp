@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-expand-sm navbar-info bg-info">
     <div class="container">
         <a class="navbar-brand" href="<c:url value="/" />">WebApp Online</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -29,7 +29,7 @@
                 <li class="nav-item" style="padding-left: 10px">
                     <a class="nav-link" href="<c:url value="/cart" />">
                         <i class="fa fa-shopping-cart"></i>
-                        <div class="badge btn-danger" id="cartCounter">${cartCounter}</div>
+                        <div class="badge btn-danger" id="cartCounter">${count}</div>
                     </a>
                 </li>    
             </ul>
